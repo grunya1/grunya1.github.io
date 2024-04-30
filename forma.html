@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .ggrid {
+            display: grid;
+        }
+
+        form.ggrid {
+            grid-template-columns: 1fr 1fr;
+            /* определение колонк для формы */
+            grid-gap: 10px 20px;
+            /* отступы между ячейками - строки столбцы */
+            /* grid-auto-columns: minmax(30px, auto);  определение размеров создаваемых */
+            /* grid-auto-rows: minmax(30px, auto);     столбцов и колонок */
+            justify-items: right;
+            /* выравнивание содержимого ячейки по ширине вправо */
+            align-items: center;
+            /* выравнивание содержимого ячейки по высоте центр */
+        }
+
+        form {
+            /* background-color: rgb(64, 202, 133); */
+            background-color: white;
+            width: fit-content;
+            height: fit-content;
+            margin: 0px;
+            padding: 10px;
+        }
+
+        input {
+            background-color: white;
+            width: 300px;
+            padding: 7px;
+            border: 0;
+            box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+        }
+
+        input,
+        textarea::placeholder {
+            color: rgb(17, 83, 83);
+        }
+
+        textarea {
+            resize: none;
+            width: 100%;
+            border: 0;
+            box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+        }
+
+        .text-up {
+            align-self: start;
+        }
+
+        input[type=reset],
+        input[type=submit] {
+            width: fit-content;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form class="ggrid" target="_blank">
+
+        Фамилия Имя Отчество
+        <input type="text" placeholder="Фамилия Имя Отчество" maxlength="55" autofocus>
+
+        телефон
+        <input type="tel" placeholder="8-999-777-66-55" maxlength="15">
+
+        дата
+        <input type="date">
+
+        оценка
+        <input type="number" placeholder="от 0 до 10" min="0" max="10">
+
+        <p class="text-up">отзыв</p>
+        <textarea placeholder="Ваше сообщение" rows="10" maxlength="500"></textarea>
+
+        <input type="reset" value="Очистить форму">
+        <input type="submit" value="Отправить отзыв">
+
+    </form>
+
+</body>
+
+</html>
